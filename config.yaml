@@ -1,0 +1,28 @@
+model:
+  weights: "yolo11n.pt"
+  confidence: 0.4
+  iou: 0.45
+  classes: [0, 2, 3, 5, 7]
+  device: "cpu"
+  mode: "detection"     # "detection" or "segmentation"
+
+tracker:
+  type: "bytetrack.yaml"
+  track_buffer: 60
+
+events:
+  loitering_seconds: 20
+  crowd_threshold: 15
+  restricted_zone:
+    - [400, 300]
+    - [700, 300]
+    - [700, 600]
+    - [400, 600]
+
+performance:
+  frame_resize_width: 640      
+  segmentation_every_n_frames: 5  
+
+output:
+  save_annotated_video: true
+  report_format: "both"
