@@ -2,7 +2,7 @@
 venv/
 
 # Model weights 
-
+*.pt
 # Test videos 
 videos/*
 !videos/.gitkeep
