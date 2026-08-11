@@ -1,7 +1,7 @@
 model:
-  weights: "yolo11n.pt"
+  weights: "yolo11s.pt"
   confidence: 0.4
-  iou: 0.45
+  iou: 0.50
   classes: [0, 2, 3, 5, 7]
   device: "cpu"
   mode: "detection"     # "detection" or "segmentation"
@@ -9,6 +9,7 @@ model:
 tracker:
   type: "bytetrack.yaml"
   track_buffer: 60
+
 
 events:
   loitering_seconds: 20
@@ -18,6 +19,11 @@ events:
     - [700, 300]
     - [700, 600]
     - [400, 600]
+  safe_waiting_zone:         
+    - [50, 400]
+    - [300, 400]
+    - [300, 600]
+    - [50, 600]
 
 performance:
   frame_resize_width: 640      
