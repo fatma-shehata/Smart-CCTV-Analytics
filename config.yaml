@@ -1,6 +1,7 @@
 model:
   weights: "yolo11s.pt"
-  confidence: 0.4
+  segmentation_weights: "yolo11n-seg.pt"
+  confidence: 0.45
   iou: 0.50
   classes: [0, 2, 3, 5, 7]
   device: "cpu"

@@ -7,6 +7,16 @@ interface — it never needs to know which concrete model is running.
 
 from abc import ABC, abstractmethod
 
+# Shared across all detector implementations (Detection, Segmentation, ...)
+# so class names stay consistent everywhere in the project.
+CLASS_NAMES = {
+    0: "Person",
+    2: "Car",
+    3: "Motorcycle",
+    5: "Bus",
+    7: "Truck",
+}
+
 
 class BaseDetector(ABC):
     """Abstract base class (interface) for all detector implementations."""

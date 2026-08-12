@@ -6,19 +6,11 @@ Concrete implementation of BaseDetector for plain object detection
 
 from ultralytics import YOLO
 
-from core.base_detector import BaseDetector
+from core.base_detector import BaseDetector, CLASS_NAMES
 from infrastructure.logger import setup_logger
 
 logger = setup_logger(__name__)
 
-# COCO class ids we care about, mapped to readable names
-CLASS_NAMES = {
-    0: "Person",
-    2: "Car",
-    3: "Motorcycle",
-    5: "Bus",
-    7: "Truck",
-}
 
 
 class DetectionModel(BaseDetector):
@@ -54,7 +46,7 @@ class DetectionModel(BaseDetector):
             iou=self.model_config["iou"],
             classes=self.model_config["classes"],
             device=self.model_config["device"],
-            tracker="bytetrack_custom.yaml",
+            tracker=self.model_config.get("tracker_type", "bytetrack.yaml"),
             verbose=False,
         )
         return results[0]
