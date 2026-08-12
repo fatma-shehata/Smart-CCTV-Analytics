@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from core.detection_model import DetectionModel, CLASS_NAMES
 from core.tracker import Tracker
-from core.analytics import AnalyticsEngine
+from core.analysis import AnalyticsEngine
 from infrastructure.config_loader import load_config
 from infrastructure.video_io import open_video, get_video_fps, create_video_writer
 
@@ -148,7 +148,7 @@ def main():
                 video_placeholder.image(rgb_frame, channels="RGB", use_container_width=True)
 
             # Slow down playback a bit so IDs are readable (1.5x normal speed)
-            time.sleep(1 / max(fps, 1))
+            time.sleep(1.5 / max(fps, 1))
 
             frame_index += 1
             if total_frames > 0:
