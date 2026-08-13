@@ -47,7 +47,8 @@ required).
 
 ```
 Smart-CCTV/
-├── app.py                       # Streamlit entry point (single-page dashboard)
+├── presentation/
+│   ├── app.py                       # Streamlit entry point (single-page dashboard)
 ├── config.yaml                  # Every tunable setting lives here
 ├── requirements.txt
 │
@@ -115,7 +116,7 @@ corners visually before editing the config.
 ## Running the app
 
 ```bash
-streamlit run app.py
+streamlit run presentation/app.py
 ```
 
 Then open the local URL Streamlit prints (usually `http://localhost:8501`),
