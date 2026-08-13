@@ -148,4 +148,7 @@ No thresholds are hardcoded in the source.
 
 ## Team
 
-Built by Fatma and team — AI Program, Kafr El-Sheikh University.
+Built by Fatma Shehata ,Shrouq Shahhat,Jana Sherif
+NTI Interneship
+
+AI Program, Kafr El-Sheikh University.
